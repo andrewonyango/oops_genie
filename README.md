@@ -7,22 +7,23 @@ later.
 Create an OopsGenieAlert Object minimally providing your OpsGenie api key and a 
 message.
 ```ruby
-alert = OopsGenie::OopsGenieAlert.new('your api key here', 'Testing Alerts')
+alert = OopsGenie::OopsGenieAlert.new('your api key here', 'url here', 'Testing Alerts')
 alert.send_alert
 ```
 
 Additionally you can set other configuration parameters to the alert object
 before sending. eg.
 ```ruby
-alert = OopsGenie::OopsGenieAlert.new('your api key here', 'Testing Alerts')
+alert = OopsGenie::OopsGenieAlert.new('your api key here', 'url here', 'Testing Alerts')
 alert.tags = ['Critical', 'Another tag']
 alert.priority = 'P1'
 alert.send_alert
 
 ```
 
-Attributes that can be set on the alert oject are:
+Attributes that can be set on the alert object are:
   - api_key
+  - url
   - message
   - alias
   - actions

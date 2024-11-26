@@ -8,14 +8,13 @@ module OopsGenie
   # Implement sending an alert to OpsGenie
   #
   class OopsGenieClient
-    def initialize(api_key)
+    def initialize(api_key, url)
       @api_key = api_key
-      # TODO: dondeng - Do not hard code this
-      @url_prefix = 'https://api.eu.opsgenie.com/v2/alerts'
+      @url = url
     end
 
     def fetch_json(alert_config)
-      uri = URI(@url_prefix)
+      uri = URI(@url)
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
 
